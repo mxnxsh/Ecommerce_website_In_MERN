@@ -26,6 +26,7 @@ router.get('/:id', async (req, res) => {
 });
 
 router.put('/:id', isAuth, isAdmin, async (req, res) => {
+  console.log("Route user=>", req.user);
   const productId = req.params.id;
   const product = await Product.findById(productId);
   if (product) {
